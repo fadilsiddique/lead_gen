@@ -98,20 +98,8 @@ Query Param	Description	Required
 q	Business category / search keyword	✅ Yes
 location	Area or region (e.g. "Dubai Marina")	✅ Yes
 
-⚙️ How to Use with n8n
-You can use this API in an n8n workflow like this:
 
-Start with a Chat or Cron trigger
-
-Function Node → pass q and location
-
-HTTP Request Node → call http://localhost:5000/leads
-
-Google Sheets Node → append each result
-
-Need help with this workflow? Ask in issues or check n8n.io.
-
-⚠️ API Limitations
+## ⚠️ API Limitations
 Google Places textsearch doesn’t return phone/website by default
 
 We use Places Details API to enrich each result — this means 2 requests per lead
@@ -123,18 +111,3 @@ You're allowed:
 ✅ 11,000 details requests/month free
 
 More than enough for lead gen
-
-✅ To-Do / Improvements
- Add CSV export endpoint
-
- Add pagination (beyond 20 results)
-
- Deploy to Render / Railway
-
- Mongo or Redis-based persistent caching
-
-🙌 Credits
-Built by Fadil Siddique to simplify lead gen for small agencies and founders.
-
-📜 License
-MIT
