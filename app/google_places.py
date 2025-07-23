@@ -70,7 +70,8 @@ def get_leads(query, location_text, radius=5000, max_results=20):
             "address": place.get("formatted_address"),
             "rating": place.get("rating"),
             "phone": details.get("formatted_phone_number"),
-            "website": details.get("website")
+            "website": details.get("website"),
+            "maps_link": f"https://www.google.com/maps/place/?q=place_id:{place_id}"
         })
 
     cache.set(query_key, leads, ttl=3600)
