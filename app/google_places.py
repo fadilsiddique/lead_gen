@@ -25,7 +25,7 @@ def geocode_location(location_name):
     location = results[0]["geometry"]["location"]
     return f"{location['lat']},{location['lng']}"
 
-def get_leads(query, location_text, radius=5000, max_results=20):
+def get_leads(query, location_text, radius=5000, max_results=30):
     query_key = f"{query.lower()}_{location_text.lower()}"
     cached = cache.get(query_key)
     if cached:
